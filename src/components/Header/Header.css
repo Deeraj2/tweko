@@ -1,0 +1,48 @@
+.header>h1 {
+    font-family: 'Telma', cursive;
+    font-size: 24px;
+    color: rgb(255, 206, 46);
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 30px;
+}
+.header-content{
+    display: flex;
+    align-items: center;
+}
+.modal-content {
+    text-align: center;
+}
+
+.modal-name {
+    color: rgb(255, 206, 46);
+    margin-top: 10px;
+}
+
+.modal-email {
+    color: gray;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.modal-logout {
+    padding: 10px 15px;
+    font-weight: 600;
+    background-color:rgb(255, 206, 46);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    left: 260px;
+    transition: 0.2s ease-in-out;
+}
+
+.modal-logout:hover {
+    background-color: rgb(253, 212, 76);
+}

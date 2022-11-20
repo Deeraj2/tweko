@@ -1,0 +1,153 @@
+.create {
+    padding: 70px;
+    margin: 30px 40px;
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
+
+.create-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.form-content {
+    object-fit: contain;
+    display: grid;
+    flex-direction: column;
+    width: 40%;
+}
+
+.content-input {
+    object-fit: contain;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px;
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    color: gray;
+}
+
+.content-message {
+    object-fit: contain;
+
+    height: 90px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px;
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    color: gray;
+}
+
+.content-select {
+    object-fit: contain;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 20px;
+    padding: 10px;
+    outline: none;
+    border-radius: 10px;
+    border: none;
+    color: gray;
+    cursor: pointer;
+}
+
+.btn-content {
+    display: flex;
+    margin-top: 10px;
+    padding-left: 0.6rem;
+}
+
+.btn-content>button {
+    padding: 15px;
+    width: 100px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #ffc75f;
+    color: white;
+    font-weight: 600;
+    transition: 0.2s ease-in;
+}
+
+.btn-content>button:hover {
+    background-color: #f3b749;
+}
+
+.images-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    min-height: 500px;
+    padding: 20px;
+    border: 3px solid lightgray;
+    border-style: dotted;
+    border-radius: 10px;
+}
+
+.images-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.iamges-icon {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    cursor: pointer;
+    color: gray;
+}
+
+.images-name {
+    color: gray;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.filebase {
+    position: absolute;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.image {
+    position: relative;
+    width: 40%;
+}
+
+.uploaded-image {
+    height: 50%;
+    width: 50%;
+    border-radius: 8px;
+}
+
+
+@media (max-width: 900px){
+    .create-content{
+        flex-direction: column;
+    }
+    .create{
+        padding: 10px;
+    }
+    .form-content{
+        width: 100%;
+    }
+    .images-content{
+        width: 100%;
+    }
+}
