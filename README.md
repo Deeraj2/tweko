@@ -41,7 +41,7 @@ including UserId.
  * Save: Stores the PostId and UserId when the user clicks on the save button.
  * Comments: Stores the comment in comments including PostId.
 
-### Server-Side
+### Server-Side:
 
 Rest API:
   * Express with 5 routes.
