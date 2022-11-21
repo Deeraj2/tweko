@@ -13,6 +13,7 @@ import { Avatar } from "@mui/material";
 import "./SinglePost.css";
 import MasonryLayout from "../Post/MasonryLayout";
 import Loading from "../Loading/Loading";
+import Category from "../Category/Category";
 
 const SinglePost = () => {
   const { id } = useParams();
@@ -35,15 +36,7 @@ const SinglePost = () => {
   const navigate = useNavigate();
   const tag = singlePost?.tags.split(",");
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    singlepost();
-    comments();
-  }, [id]);
-
-  useEffect(() => {
-    if (singlePost) category();
-  }, [singlePost]);
+  console.log(singlePost);
 
   //Comments
   const comments = async () => {
@@ -143,7 +136,6 @@ const SinglePost = () => {
       .then((res) => {
         setSinglePost((prevState) => {
           if (prevState.id === PostId) {
-            console.log(prevState);
             if (res.data.liked) {
               return {
                 ...prevState,
@@ -152,9 +144,7 @@ const SinglePost = () => {
             } else {
               const likeArray = prevState.Likes;
               likeArray.pop();
-              console.log(likeArray);
-              //In future i will fix the bug
-              return { ...prevState, Likes: [...prevState.Likes, likeArray] };
+              return { ...prevState, Likes: likeArray };
             }
           } else {
             console.log(prevState.Likes);
@@ -191,7 +181,7 @@ const SinglePost = () => {
               const saveArray = prevState.Saves;
               saveArray.pop();
               //In future i will fix the bug
-              return { ...prevState, Saves: [...prevState.Saves, saveArray] };
+              return { ...prevState, Saves: saveArray };
             }
           } else {
             return prevState;
@@ -224,33 +214,17 @@ const SinglePost = () => {
       });
   };
 
-  //Fetch Category Post
-  const category = async () => {
-    try {
-      const config = {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      };
-      const { data } = await axios.get(
-        `http://localhost:8000/posts/${singlePost?.category}`,
-        config
-      );
-      setCatPost(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const recommendedPosts = catPost.filter(
-    (posts) => posts?.id !== singlePost.id
-  );
-
   //update the Post
   const updatePost = (id) => {
     setCurrentId(id);
     navigate("/upload");
   };
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    singlepost();
+    comments();
+  }, [id]);
 
   return (
     <>
@@ -402,13 +376,7 @@ const SinglePost = () => {
               </div>
             </div>
           </div>
-
-          {recommendedPosts.length > 0 && (
-            <div className="category">
-              <h1>Related Category</h1>
-              <MasonryLayout posts={recommendedPosts} />
-            </div>
-          )}
+          <Category />
         </>
       )}
     </>
