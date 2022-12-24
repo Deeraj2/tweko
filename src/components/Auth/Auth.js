@@ -132,7 +132,7 @@ const Auth = () => {
       <video src="./videos/share.mp4" autoPlay loop muted />
       <div className="auth-form">
         <form className="auth-login" onSubmit={handleSubmit}>
-          <h1>Secrets</h1>
+          <h1>Tweko</h1>
           <h2>{isSignUp ? "Sign Up" : "Sign In"}</h2>
           {isSignUp && (
             <input
