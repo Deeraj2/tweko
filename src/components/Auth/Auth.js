@@ -50,7 +50,7 @@ const Auth = () => {
       navigate("/");
       setAlert({
         open: true,
-        message: `Signup In Successful. Welcome ${user?.result.name}`,
+        message: `Signup In Successful.`,
       });
     } catch (error) {
       setAlert({
@@ -78,7 +78,7 @@ const Auth = () => {
       navigate("/");
       setAlert({
         open: true,
-        message: `Login In Successful. Welcome ${user?.result.name}`,
+        message: `Login In Successful.`,
       });
     } catch (error) {
       setAlert({
