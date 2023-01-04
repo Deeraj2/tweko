@@ -22,8 +22,8 @@ const SinglePost = () => {
     user,
     singlePost,
     setSinglePost,
-    catPost,
-    setCatPost,
+    posts,
+    setPost,
     savePost,
     setsavePost,
   } = useContext(socialContext);
@@ -35,8 +35,6 @@ const SinglePost = () => {
   const UserId = user?.result.id;
   const navigate = useNavigate();
   const tag = singlePost?.tags.split(",");
-
-  console.log(singlePost);
 
   //Comments
   const comments = async () => {
@@ -210,6 +208,7 @@ const SinglePost = () => {
     await axios
       .delete(`http://localhost:8000/posts/${postId}`, config)
       .then(() => {
+        setPost(posts.filter((p) => p.id !== postId));
         navigate("/");
       });
   };
@@ -294,7 +293,7 @@ const SinglePost = () => {
                   />
                 )}
                 <span>{singlePost?.Saves.length}</span>
-                <a
+                {/* <a
                   href={`${singlePost?.selectedFile}?dl=`}
                   download
                   onClick={(e) => {
@@ -309,7 +308,7 @@ const SinglePost = () => {
                       color: "gray",
                     }}
                   />
-                </a>
+                </a> */}
                 {user?.result.name === singlePost?.creator && (
                   <EditIcon
                     sx={{

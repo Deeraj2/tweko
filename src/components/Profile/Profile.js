@@ -87,7 +87,7 @@ const Profile = () => {
     userPost();
     fetchPost();
     save();
-  }, []);
+  }, [id]);
 
   return (
     <div className="profile">
