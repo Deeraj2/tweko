@@ -22,7 +22,7 @@ npm start
 cd server/
 
 //sequelize-cli bootstrap for config
-npx sequelize-cli
+npx sequelize-cli init
 
 //start the backend server
 npm start
