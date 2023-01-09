@@ -1,7 +1,7 @@
 # Tweko
 ![Tweko image](https://res.cloudinary.com/dwxmraluj/image/upload/v1668929331/tweko_obzgak.png)
 
-Tweko is a blogging app where users can upload, like, save, download and comment on their blogs. Implemented the entire login system to allow CRUD operation on the user post. The user who has uploaded their blogs can update and delete the blog.
+Tweko is a social-media app where users can upload, like, save, download and comment on their blogs. Implemented the entire login system to allow CRUD operation on the user post. The user who has uploaded their blogs can update and delete the blog.
 
 ## Installation
 
